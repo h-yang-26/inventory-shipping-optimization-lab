@@ -1,0 +1,269 @@
+{
+  "units": {
+    "mass": "kg",
+    "volume": "m3",
+    "cost": "toy_cost_units"
+  },
+  "scenarios": [
+    {
+      "name": "normal",
+      "description": "Both containers can cover all demand; opening both is cheaper than leaving units short.",
+      "products": [
+        {
+          "id": "bolt_kits",
+          "stock": 120,
+          "demand": 100,
+          "unit_mass_kg": 8.0,
+          "unit_volume_m3": 0.05,
+          "shortage_penalty": 6.0
+        },
+        {
+          "id": "pump_housings",
+          "stock": 40,
+          "demand": 35,
+          "unit_mass_kg": 22.0,
+          "unit_volume_m3": 0.3,
+          "shortage_penalty": 45.0
+        },
+        {
+          "id": "filter_cartridges",
+          "stock": 200,
+          "demand": 150,
+          "unit_mass_kg": 1.5,
+          "unit_volume_m3": 0.04,
+          "shortage_penalty": 3.0
+        },
+        {
+          "id": "cable_spools",
+          "stock": 30,
+          "demand": 24,
+          "unit_mass_kg": 35.0,
+          "unit_volume_m3": 0.6,
+          "shortage_penalty": 70.0
+        }
+      ],
+      "containers": [
+        {
+          "id": "CNT-S",
+          "capacity_kg": 1000.0,
+          "capacity_m3": 12.0,
+          "fixed_cost": 400.0
+        },
+        {
+          "id": "CNT-L",
+          "capacity_kg": 2400.0,
+          "capacity_m3": 28.0,
+          "fixed_cost": 900.0
+        }
+      ]
+    },
+    {
+      "name": "tight_capacity",
+      "description": "Same products and penalties, but much smaller containers: the small container's contents are worth less than its fixed charge, so only the large one is opened and some demand goes unfulfilled.",
+      "products": [
+        {
+          "id": "bolt_kits",
+          "stock": 120,
+          "demand": 100,
+          "unit_mass_kg": 8.0,
+          "unit_volume_m3": 0.05,
+          "shortage_penalty": 6.0
+        },
+        {
+          "id": "pump_housings",
+          "stock": 40,
+          "demand": 35,
+          "unit_mass_kg": 22.0,
+          "unit_volume_m3": 0.3,
+          "shortage_penalty": 45.0
+        },
+        {
+          "id": "filter_cartridges",
+          "stock": 200,
+          "demand": 150,
+          "unit_mass_kg": 1.5,
+          "unit_volume_m3": 0.04,
+          "shortage_penalty": 3.0
+        },
+        {
+          "id": "cable_spools",
+          "stock": 30,
+          "demand": 24,
+          "unit_mass_kg": 35.0,
+          "unit_volume_m3": 0.6,
+          "shortage_penalty": 70.0
+        }
+      ],
+      "containers": [
+        {
+          "id": "CNT-S",
+          "capacity_kg": 200.0,
+          "capacity_m3": 2.0,
+          "fixed_cost": 400.0
+        },
+        {
+          "id": "CNT-L",
+          "capacity_kg": 1500.0,
+          "capacity_m3": 16.0,
+          "fixed_cost": 900.0
+        }
+      ]
+    },
+    {
+      "name": "high_shortage_penalty",
+      "description": "Same tight containers, every shortage penalty multiplied by 4: now the small container's contents are worth more than its fixed charge, so both containers are opened.",
+      "products": [
+        {
+          "id": "bolt_kits",
+          "stock": 120,
+          "demand": 100,
+          "unit_mass_kg": 8.0,
+          "unit_volume_m3": 0.05,
+          "shortage_penalty": 24.0
+        },
+        {
+          "id": "pump_housings",
+          "stock": 40,
+          "demand": 35,
+          "unit_mass_kg": 22.0,
+          "unit_volume_m3": 0.3,
+          "shortage_penalty": 180.0
+        },
+        {
+          "id": "filter_cartridges",
+          "stock": 200,
+          "demand": 150,
+          "unit_mass_kg": 1.5,
+          "unit_volume_m3": 0.04,
+          "shortage_penalty": 12.0
+        },
+        {
+          "id": "cable_spools",
+          "stock": 30,
+          "demand": 24,
+          "unit_mass_kg": 35.0,
+          "unit_volume_m3": 0.6,
+          "shortage_penalty": 280.0
+        }
+      ],
+      "containers": [
+        {
+          "id": "CNT-S",
+          "capacity_kg": 200.0,
+          "capacity_m3": 2.0,
+          "fixed_cost": 400.0
+        },
+        {
+          "id": "CNT-L",
+          "capacity_kg": 1500.0,
+          "capacity_m3": 16.0,
+          "fixed_cost": 900.0
+        }
+      ]
+    },
+    {
+      "name": "low_shortage_penalty",
+      "description": "Normal containers, but total shortage cost (288.5) is below the cheapest fixed charge (400), so shipping nothing is optimal.",
+      "products": [
+        {
+          "id": "bolt_kits",
+          "stock": 120,
+          "demand": 100,
+          "unit_mass_kg": 8.0,
+          "unit_volume_m3": 0.05,
+          "shortage_penalty": 0.5
+        },
+        {
+          "id": "pump_housings",
+          "stock": 40,
+          "demand": 35,
+          "unit_mass_kg": 22.0,
+          "unit_volume_m3": 0.3,
+          "shortage_penalty": 3.0
+        },
+        {
+          "id": "filter_cartridges",
+          "stock": 200,
+          "demand": 150,
+          "unit_mass_kg": 1.5,
+          "unit_volume_m3": 0.04,
+          "shortage_penalty": 0.25
+        },
+        {
+          "id": "cable_spools",
+          "stock": 30,
+          "demand": 24,
+          "unit_mass_kg": 35.0,
+          "unit_volume_m3": 0.6,
+          "shortage_penalty": 4.0
+        }
+      ],
+      "containers": [
+        {
+          "id": "CNT-S",
+          "capacity_kg": 1000.0,
+          "capacity_m3": 12.0,
+          "fixed_cost": 400.0
+        },
+        {
+          "id": "CNT-L",
+          "capacity_kg": 2400.0,
+          "capacity_m3": 28.0,
+          "fixed_cost": 900.0
+        }
+      ]
+    },
+    {
+      "name": "no_inventory",
+      "description": "No stock on hand: nothing can ship, every demanded unit is short, no container is opened.",
+      "products": [
+        {
+          "id": "bolt_kits",
+          "stock": 0,
+          "demand": 100,
+          "unit_mass_kg": 8.0,
+          "unit_volume_m3": 0.05,
+          "shortage_penalty": 6.0
+        },
+        {
+          "id": "pump_housings",
+          "stock": 0,
+          "demand": 35,
+          "unit_mass_kg": 22.0,
+          "unit_volume_m3": 0.3,
+          "shortage_penalty": 45.0
+        },
+        {
+          "id": "filter_cartridges",
+          "stock": 0,
+          "demand": 150,
+          "unit_mass_kg": 1.5,
+          "unit_volume_m3": 0.04,
+          "shortage_penalty": 3.0
+        },
+        {
+          "id": "cable_spools",
+          "stock": 0,
+          "demand": 24,
+          "unit_mass_kg": 35.0,
+          "unit_volume_m3": 0.6,
+          "shortage_penalty": 70.0
+        }
+      ],
+      "containers": [
+        {
+          "id": "CNT-S",
+          "capacity_kg": 1000.0,
+          "capacity_m3": 12.0,
+          "fixed_cost": 400.0
+        },
+        {
+          "id": "CNT-L",
+          "capacity_kg": 2400.0,
+          "capacity_m3": 28.0,
+          "fixed_cost": 900.0
+        }
+      ]
+    }
+  ]
+}

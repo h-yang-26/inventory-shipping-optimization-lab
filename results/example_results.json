@@ -1,0 +1,284 @@
+{
+  "disclaimer": "Fictional toy model: volume/weight totals only. This is NOT a validated 3D container-loading or load-restraint plan. All costs are toy_cost_units.",
+  "results": [
+    {
+      "allocation": {
+        "bolt_kits": {
+          "CNT-L": 41,
+          "CNT-S": 59
+        },
+        "cable_spools": {
+          "CNT-L": 24,
+          "CNT-S": 0
+        },
+        "filter_cartridges": {
+          "CNT-L": 26,
+          "CNT-S": 124
+        },
+        "pump_housings": {
+          "CNT-L": 35,
+          "CNT-S": 0
+        }
+      },
+      "baseline_ship_nothing_toy_cost_units": 4305.0,
+      "container_load": {
+        "CNT-L": {
+          "mass_kg": 1977.0,
+          "mass_utilization": 0.82375,
+          "volume_m3": 27.99,
+          "volume_utilization": 0.999643
+        },
+        "CNT-S": {
+          "mass_kg": 658.0,
+          "mass_utilization": 0.658,
+          "volume_m3": 7.91,
+          "volume_utilization": 0.659167
+        }
+      },
+      "container_used": {
+        "CNT-L": true,
+        "CNT-S": true
+      },
+      "objective_toy_cost_units": 1300.0,
+      "overall_mass_utilization": 0.775,
+      "overall_volume_utilization": 0.8975,
+      "problems": [],
+      "scenario": "normal",
+      "shortage": {
+        "bolt_kits": 0,
+        "cable_spools": 0,
+        "filter_cartridges": 0,
+        "pump_housings": 0
+      },
+      "solver_status": "Optimal (solution status 1)",
+      "status": "OPTIMAL",
+      "total_demand": 309,
+      "total_shipped": 309,
+      "total_shortage": 0
+    },
+    {
+      "allocation": {
+        "bolt_kits": {
+          "CNT-L": 74,
+          "CNT-S": 0
+        },
+        "cable_spools": {
+          "CNT-L": 3,
+          "CNT-S": 0
+        },
+        "filter_cartridges": {
+          "CNT-L": 0,
+          "CNT-S": 0
+        },
+        "pump_housings": {
+          "CNT-L": 35,
+          "CNT-S": 0
+        }
+      },
+      "baseline_ship_nothing_toy_cost_units": 4305.0,
+      "container_load": {
+        "CNT-L": {
+          "mass_kg": 1467.0,
+          "mass_utilization": 0.978,
+          "volume_m3": 16.0,
+          "volume_utilization": 1.0
+        },
+        "CNT-S": {
+          "mass_kg": 0.0,
+          "mass_utilization": null,
+          "volume_m3": 0.0,
+          "volume_utilization": null
+        }
+      },
+      "container_used": {
+        "CNT-L": true,
+        "CNT-S": false
+      },
+      "objective_toy_cost_units": 2976.0,
+      "overall_mass_utilization": 0.978,
+      "overall_volume_utilization": 1.0,
+      "problems": [],
+      "scenario": "tight_capacity",
+      "shortage": {
+        "bolt_kits": 26,
+        "cable_spools": 21,
+        "filter_cartridges": 150,
+        "pump_housings": 0
+      },
+      "solver_status": "Optimal (solution status 1)",
+      "status": "OPTIMAL",
+      "total_demand": 309,
+      "total_shipped": 112,
+      "total_shortage": 197
+    },
+    {
+      "allocation": {
+        "bolt_kits": {
+          "CNT-L": 80,
+          "CNT-S": 10
+        },
+        "cable_spools": {
+          "CNT-L": 3,
+          "CNT-S": 2
+        },
+        "filter_cartridges": {
+          "CNT-L": 0,
+          "CNT-S": 0
+        },
+        "pump_housings": {
+          "CNT-L": 34,
+          "CNT-S": 1
+        }
+      },
+      "baseline_ship_nothing_toy_cost_units": 17220.0,
+      "container_load": {
+        "CNT-L": {
+          "mass_kg": 1493.0,
+          "mass_utilization": 0.995333,
+          "volume_m3": 16.0,
+          "volume_utilization": 1.0
+        },
+        "CNT-S": {
+          "mass_kg": 172.0,
+          "mass_utilization": 0.86,
+          "volume_m3": 2.0,
+          "volume_utilization": 1.0
+        }
+      },
+      "container_used": {
+        "CNT-L": true,
+        "CNT-S": true
+      },
+      "objective_toy_cost_units": 8660.0,
+      "overall_mass_utilization": 0.979412,
+      "overall_volume_utilization": 1.0,
+      "problems": [],
+      "scenario": "high_shortage_penalty",
+      "shortage": {
+        "bolt_kits": 10,
+        "cable_spools": 19,
+        "filter_cartridges": 150,
+        "pump_housings": 0
+      },
+      "solver_status": "Optimal (solution status 1)",
+      "status": "OPTIMAL",
+      "total_demand": 309,
+      "total_shipped": 130,
+      "total_shortage": 179
+    },
+    {
+      "allocation": {
+        "bolt_kits": {
+          "CNT-L": 0,
+          "CNT-S": 0
+        },
+        "cable_spools": {
+          "CNT-L": 0,
+          "CNT-S": 0
+        },
+        "filter_cartridges": {
+          "CNT-L": 0,
+          "CNT-S": 0
+        },
+        "pump_housings": {
+          "CNT-L": 0,
+          "CNT-S": 0
+        }
+      },
+      "baseline_ship_nothing_toy_cost_units": 288.5,
+      "container_load": {
+        "CNT-L": {
+          "mass_kg": 0.0,
+          "mass_utilization": null,
+          "volume_m3": 0.0,
+          "volume_utilization": null
+        },
+        "CNT-S": {
+          "mass_kg": 0.0,
+          "mass_utilization": null,
+          "volume_m3": 0.0,
+          "volume_utilization": null
+        }
+      },
+      "container_used": {
+        "CNT-L": false,
+        "CNT-S": false
+      },
+      "objective_toy_cost_units": 288.5,
+      "overall_mass_utilization": null,
+      "overall_volume_utilization": null,
+      "problems": [],
+      "scenario": "low_shortage_penalty",
+      "shortage": {
+        "bolt_kits": 100,
+        "cable_spools": 24,
+        "filter_cartridges": 150,
+        "pump_housings": 35
+      },
+      "solver_status": "Optimal (solution status 1)",
+      "status": "OPTIMAL",
+      "total_demand": 309,
+      "total_shipped": 0,
+      "total_shortage": 309
+    },
+    {
+      "allocation": {
+        "bolt_kits": {
+          "CNT-L": 0,
+          "CNT-S": 0
+        },
+        "cable_spools": {
+          "CNT-L": 0,
+          "CNT-S": 0
+        },
+        "filter_cartridges": {
+          "CNT-L": 0,
+          "CNT-S": 0
+        },
+        "pump_housings": {
+          "CNT-L": 0,
+          "CNT-S": 0
+        }
+      },
+      "baseline_ship_nothing_toy_cost_units": 4305.0,
+      "container_load": {
+        "CNT-L": {
+          "mass_kg": 0.0,
+          "mass_utilization": null,
+          "volume_m3": 0.0,
+          "volume_utilization": null
+        },
+        "CNT-S": {
+          "mass_kg": 0.0,
+          "mass_utilization": null,
+          "volume_m3": 0.0,
+          "volume_utilization": null
+        }
+      },
+      "container_used": {
+        "CNT-L": false,
+        "CNT-S": false
+      },
+      "objective_toy_cost_units": 4305.0,
+      "overall_mass_utilization": null,
+      "overall_volume_utilization": null,
+      "problems": [],
+      "scenario": "no_inventory",
+      "shortage": {
+        "bolt_kits": 100,
+        "cable_spools": 24,
+        "filter_cartridges": 150,
+        "pump_housings": 35
+      },
+      "solver_status": "Optimal (solution status 1)",
+      "status": "OPTIMAL",
+      "total_demand": 309,
+      "total_shipped": 0,
+      "total_shortage": 309
+    }
+  ],
+  "solver": {
+    "cbc": "2.10.3",
+    "pulp": "3.3.2"
+  }
+}

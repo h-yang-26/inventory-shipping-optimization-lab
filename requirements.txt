@@ -1,0 +1,2 @@
+# Pinned to the version actually tested (see README, "Why PuLP 3.3.2").
+pulp==3.3.2

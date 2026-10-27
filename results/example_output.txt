@@ -1,0 +1,93 @@
+Fictional toy model: volume/weight totals only. This is NOT a validated 3D container-loading or load-restraint plan. All costs are toy_cost_units.
+
+Solver: PuLP 3.3.2 with CBC 2.10.3
+
+=== normal ===
+Both containers can cover all demand; opening both is cheaper than leaving units short.
+Status: OPTIMAL - proven optimal by the solver and re-validated
+Solver status: Optimal (solution status 1)
+Allocation (units):
+  product              demand  stock    CNT-S    CNT-L  shortage
+  bolt_kits               100    120       59       41         0
+  pump_housings            35     40        0       35         0
+  filter_cartridges       150    200      124       26         0
+  cable_spools             24     30        0       24         0
+Containers (utilization = load / capacity of a used container):
+  CNT-S: used, fixed cost 400.00, mass 658.0/1000.0 kg (65.8%), volume 7.91/12.00 m3 (65.9%)
+  CNT-L: used, fixed cost 900.00, mass 1977.0/2400.0 kg (82.4%), volume 27.99/28.00 m3 (100.0%)
+  overall (used containers): mass 77.5%, volume 89.8%
+Units: shipped 309 of 309 demanded; shortage 0
+Objective: 1,300.00 toy_cost_units (shortage penalties + fixed container charges)
+Baseline (ship nothing, all demand short): 4,305.00 toy_cost_units; difference vs baseline: 3,005.00 toy_cost_units (fictional)
+
+=== tight_capacity ===
+Same products and penalties, but much smaller containers: the small container's contents are worth less than its fixed charge, so only the large one is opened and some demand goes unfulfilled.
+Status: OPTIMAL - proven optimal by the solver and re-validated
+Solver status: Optimal (solution status 1)
+Allocation (units):
+  product              demand  stock    CNT-S    CNT-L  shortage
+  bolt_kits               100    120        0       74        26
+  pump_housings            35     40        0       35         0
+  filter_cartridges       150    200        0        0       150
+  cable_spools             24     30        0        3        21
+Containers (utilization = load / capacity of a used container):
+  CNT-S: not used (no fixed charge incurred, nothing loaded)
+  CNT-L: used, fixed cost 900.00, mass 1467.0/1500.0 kg (97.8%), volume 16.00/16.00 m3 (100.0%)
+  overall (used containers): mass 97.8%, volume 100.0%
+Units: shipped 112 of 309 demanded; shortage 197
+Objective: 2,976.00 toy_cost_units (shortage penalties + fixed container charges)
+Baseline (ship nothing, all demand short): 4,305.00 toy_cost_units; difference vs baseline: 1,329.00 toy_cost_units (fictional)
+
+=== high_shortage_penalty ===
+Same tight containers, every shortage penalty multiplied by 4: now the small container's contents are worth more than its fixed charge, so both containers are opened.
+Status: OPTIMAL - proven optimal by the solver and re-validated
+Solver status: Optimal (solution status 1)
+Allocation (units):
+  product              demand  stock    CNT-S    CNT-L  shortage
+  bolt_kits               100    120       10       80        10
+  pump_housings            35     40        1       34         0
+  filter_cartridges       150    200        0        0       150
+  cable_spools             24     30        2        3        19
+Containers (utilization = load / capacity of a used container):
+  CNT-S: used, fixed cost 400.00, mass 172.0/200.0 kg (86.0%), volume 2.00/2.00 m3 (100.0%)
+  CNT-L: used, fixed cost 900.00, mass 1493.0/1500.0 kg (99.5%), volume 16.00/16.00 m3 (100.0%)
+  overall (used containers): mass 97.9%, volume 100.0%
+Units: shipped 130 of 309 demanded; shortage 179
+Objective: 8,660.00 toy_cost_units (shortage penalties + fixed container charges)
+Baseline (ship nothing, all demand short): 17,220.00 toy_cost_units; difference vs baseline: 8,560.00 toy_cost_units (fictional)
+
+=== low_shortage_penalty ===
+Normal containers, but total shortage cost (288.5) is below the cheapest fixed charge (400), so shipping nothing is optimal.
+Status: OPTIMAL - proven optimal by the solver and re-validated
+Solver status: Optimal (solution status 1)
+Allocation (units):
+  product              demand  stock    CNT-S    CNT-L  shortage
+  bolt_kits               100    120        0        0       100
+  pump_housings            35     40        0        0        35
+  filter_cartridges       150    200        0        0       150
+  cable_spools             24     30        0        0        24
+Containers (utilization = load / capacity of a used container):
+  CNT-S: not used (no fixed charge incurred, nothing loaded)
+  CNT-L: not used (no fixed charge incurred, nothing loaded)
+  overall (used containers): mass N/A, volume N/A
+Units: shipped 0 of 309 demanded; shortage 309
+Objective: 288.50 toy_cost_units (shortage penalties + fixed container charges)
+Baseline (ship nothing, all demand short): 288.50 toy_cost_units; difference vs baseline: 0.00 toy_cost_units (fictional)
+
+=== no_inventory ===
+No stock on hand: nothing can ship, every demanded unit is short, no container is opened.
+Status: OPTIMAL - proven optimal by the solver and re-validated
+Solver status: Optimal (solution status 1)
+Allocation (units):
+  product              demand  stock    CNT-S    CNT-L  shortage
+  bolt_kits               100      0        0        0       100
+  pump_housings            35      0        0        0        35
+  filter_cartridges       150      0        0        0       150
+  cable_spools             24      0        0        0        24
+Containers (utilization = load / capacity of a used container):
+  CNT-S: not used (no fixed charge incurred, nothing loaded)
+  CNT-L: not used (no fixed charge incurred, nothing loaded)
+  overall (used containers): mass N/A, volume N/A
+Units: shipped 0 of 309 demanded; shortage 309
+Objective: 4,305.00 toy_cost_units (shortage penalties + fixed container charges)
+Baseline (ship nothing, all demand short): 4,305.00 toy_cost_units; difference vs baseline: 0.00 toy_cost_units (fictional)

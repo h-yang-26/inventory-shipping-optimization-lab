@@ -1,0 +1,4 @@
+# Test configuration only; the lab is run with `python -m shiplab` from the repository root.
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "tests"]
