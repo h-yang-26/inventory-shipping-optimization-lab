@@ -1,5 +1,16 @@
 # Inventory and Shipping Optimization Lab
 
+**Decides which containers are worth opening when shipping every unit isn’t, and re-checks every plan independently.**
+
+[Read the case study](https://h-yang-26.github.io/projects/inventory-shipping-optimization-lab/) · [How this was built](#how-this-was-built) · [Portfolio](https://h-yang-26.github.io/)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/scenario-results-dark.svg">
+  <img src="docs/scenario-results.svg" alt="Stacked bars of units shipped and short out of 309 requested: normal 309 shipped; high shortage penalty 130 shipped and 179 short; tight capacity 112 shipped and 197 short; low shortage penalty and no inventory 0 shipped and 309 short." width="100%">
+</picture>
+
+*Results from the five fictional scenarios in `results/example_results.json`. Costs are in made-up units, not real freight rates. Figure from the portfolio site.*
+
 A small, original Python demonstration: allocate a few **fictional** products to one or two
 **fictional** shipping containers under supply, demand, mass and volume limits, using an integer
 program solved with PuLP + CBC. It shows how the model trades **unfulfilled demand** against
@@ -21,7 +32,18 @@ py -3.11 -m venv .venv            # or: python -m venv .venv
 ```
 
 If PowerShell blocks script activation you do not need to activate the environment; call
-`.\.venv\Scripts\python` directly as above. On macOS/Linux use `.venv/bin/python`.
+`.\.venv\Scripts\python` directly as above.
+
+### macOS / Linux
+
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-dev.txt
+.venv/bin/python -m shiplab                                          # run all scenarios
+.venv/bin/python -m pytest                                           # run the tests
+```
+
+The options below work the same way with `.venv/bin/python` and `/` in paths.
 
 Useful options:
 
@@ -34,8 +56,11 @@ Useful options:
 `--json` / `--text` **replace** the target file (they never append). Exit code: `0` all scenarios
 solved, `1` some scenario had no usable/valid solution, `2` invalid input (message on stderr).
 
-Tested only on **Windows 11, Python 3.13.15, PuLP 3.3.2, CBC 2.10.3 (bundled with PuLP), pytest 9.1.1**.
-Other OSes and Python 3.11/3.12 are expected to work but were **not** tested.
+Tested on **Windows 11, Python 3.13.15, PuLP 3.3.2, CBC 2.10.3 (bundled with PuLP), pytest 9.1.1**,
+and by an agent on **Ubuntu 24.04, Python 3.13.18, PuLP 3.3.2, CBC 2.10.3 (the Linux build bundled
+with PuLP), pytest 9.1.1** on 2026-10-29: all 130 tests pass, and regenerating
+`results/example_results.json` and `results/example_output.txt` reproduces the committed files byte
+for byte. macOS and Python 3.11/3.12 are expected to work but were **not** tested.
 
 ### Why PuLP 3.3.2
 
@@ -172,6 +197,10 @@ mode (`threads=1`): it exceeded an external four-second cap despite a 0.05-secon
 The implementation now uses CBC's native serial mode (`threads=0`), which returned in about
 0.06 seconds on that probe. This is evidence for the tested Windows/CBC version, not proof of
 every possible CBC hang's cause. Timing-sensitive probes were conducted during independent review, but are not asserted as fixed performance thresholds in the unit suite.
+
+## How this was built
+
+All data in this project is fictional, and the results say nothing about my employer’s systems. The project was built independently of my employer: AI tools did the implementation under my direction, and I approved the results. [How these were built](https://h-yang-26.github.io/how-these-were-built/) on the portfolio site explains who decided what and how the results were checked.
 
 ## Attribution and licenses
 

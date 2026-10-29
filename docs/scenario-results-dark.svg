@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400" role="img" aria-labelledby="t">
+<title id="t">Units shipped and short across five fictional scenarios</title>
+<defs>
+</defs>
+<rect width="760" height="400" fill="#191C1F"/>
+<g font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<rect x="24" y="20" width="14" height="14" rx="3" fill="#6FCDC2"/>
+<text x="44" y="32" font-size="15" fill="#A9AEB5">Units shipped</text>
+<rect x="175.2" y="20" width="14" height="14" rx="3" fill="#E6B15C"/>
+<text x="195.2" y="32" font-size="15" fill="#A9AEB5">Units short</text>
+<text x="24" y="76" font-size="17" fill="#E9E7E2" font-weight="700">Normal</text>
+<text x="24" y="97" font-size="15" fill="#A9AEB5">both containers opened</text>
+<rect x="260" y="62" width="476" height="36" rx="3" fill="#6FCDC2"/>
+<text x="728" y="85.95" font-size="17" fill="#101418" font-weight="700" text-anchor="end" data-box="260,62,476,36">309</text>
+<text x="24" y="138" font-size="17" fill="#E9E7E2" font-weight="700">High shortage penalty</text>
+<text x="24" y="159" font-size="15" fill="#A9AEB5">both containers opened</text>
+<rect x="260" y="124" width="200.259" height="36" rx="3" fill="#6FCDC2"/>
+<text x="452.259" y="147.95" font-size="17" fill="#101418" font-weight="700" text-anchor="end" data-box="260,124,200.259,36">130</text>
+<rect x="460.259" y="124" width="275.741" height="36" rx="3" fill="#E6B15C"/>
+<text x="726" y="148" font-size="17" fill="#101418" font-weight="700" text-anchor="end" data-box="460.259,124,275.741,36">179 short</text>
+<text x="24" y="200" font-size="17" fill="#E9E7E2" font-weight="700">Tight capacity</text>
+<text x="24" y="221" font-size="15" fill="#A9AEB5">large container only</text>
+<rect x="260" y="186" width="172.531" height="36" rx="3" fill="#6FCDC2"/>
+<text x="424.531" y="209.95" font-size="17" fill="#101418" font-weight="700" text-anchor="end" data-box="260,186,172.531,36">112</text>
+<rect x="432.531" y="186" width="303.469" height="36" rx="3" fill="#E6B15C"/>
+<text x="726" y="210" font-size="17" fill="#101418" font-weight="700" text-anchor="end" data-box="432.531,186,303.469,36">197 short</text>
+<text x="24" y="262" font-size="17" fill="#E9E7E2" font-weight="700">Low shortage penalty</text>
+<text x="24" y="283" font-size="15" fill="#A9AEB5">no container opened</text>
+<rect x="260" y="248" width="476" height="36" rx="3" fill="#E6B15C"/>
+<text x="726" y="272" font-size="17" fill="#101418" font-weight="700" text-anchor="end" data-box="260,248,476,36">309 short</text>
+<text x="24" y="324" font-size="17" fill="#E9E7E2" font-weight="700">No inventory</text>
+<text x="24" y="345" font-size="15" fill="#A9AEB5">no stock to ship</text>
+<rect x="260" y="310" width="476" height="36" rx="3" fill="#E6B15C"/>
+<text x="726" y="334" font-size="17" fill="#101418" font-weight="700" text-anchor="end" data-box="260,310,476,36">309 short</text>
+<text x="24" y="380" font-size="15" fill="#A9AEB5">Each scenario requests 309 units.</text>
+</g></svg>
