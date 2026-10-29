@@ -64,7 +64,7 @@ for byte. macOS and Python 3.11/3.12 are expected to work but were **not** teste
 
 ### Why PuLP 3.3.2
 
-PuLP is pinned to 3.3.2 because that version was observed to work here. In this environment
+PuLP is pinned to 3.3.2 because that version was observed to work here. In the Windows test environment
 PuLP 4.2.0 failed on import without `numpy`, had no `cat=` keyword for `LpVariable`, and listed
 no available solvers, so it was not used. PuLP 3.3.2 prints deprecation warnings about PuLP 4.0
 APIs during tests; they are harmless for the pinned version but mean a future upgrade needs work
