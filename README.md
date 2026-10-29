@@ -57,7 +57,7 @@ Useful options:
 solved, `1` some scenario had no usable/valid solution, `2` invalid input (message on stderr).
 
 Tested on **Windows 11, Python 3.13.15, PuLP 3.3.2, CBC 2.10.3 (bundled with PuLP), pytest 9.1.1**,
-and by an agent on **Ubuntu 24.04, Python 3.13.18, PuLP 3.3.2, CBC 2.10.3 (the Linux build bundled
+and by Claude on **Ubuntu 24.04, Python 3.13.18, PuLP 3.3.2, CBC 2.10.3 (the Linux build bundled
 with PuLP), pytest 9.1.1** on 2026-10-29: all 130 tests pass, and regenerating
 `results/example_results.json` and `results/example_output.txt` reproduces the committed files byte
 for byte. macOS and Python 3.11/3.12 are expected to work but were **not** tested.
@@ -200,7 +200,7 @@ every possible CBC hang's cause. Timing-sensitive probes were conducted during i
 
 ## How this was built
 
-All data in this project is fictional, and the results say nothing about my employer’s systems. The project was built independently of my employer: AI tools did the implementation under my direction, and I approved the results. [How these were built](https://h-yang-26.github.io/how-these-were-built/) on the portfolio site explains who decided what and how the results were checked.
+All data in this project is fictional, and the results say nothing about my employer’s systems. The project was built independently of my employer: ChatGPT and Claude helped with design and planning, Codex and Claude Code did the technical work under my direction, and I made the judgment calls and approved the results. [How these were built](https://h-yang-26.github.io/how-these-were-built/) on the portfolio site explains who decided what and how the results were checked.
 
 ## Attribution and licenses
 
